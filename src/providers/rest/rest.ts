@@ -13,11 +13,13 @@ import "rxjs/add/operator/catch";
 */
 @Injectable()
 export class RestProvider {
-  baseUrl:string = "http://localhost:3000";
+  //baseUrl:string = "http://localhost:3000";
+  baseUrl:string = "https://my-json-server.typicode.com/vega2k/ionic_httpclient"
 
   constructor(public http: HttpClient) {
     console.log('Hello RestProvider Provider');
   }
+
 
   public getProducts():Observable<Product[]> {
     return this.http.get(this.baseUrl+"/products")
